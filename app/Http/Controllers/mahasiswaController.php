@@ -11,9 +11,15 @@ class mahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $mhs =[
+                 1=> ['nama'=>'Budiono','jurusan'=>'Sistem Informasi '],
+                 2=> ['nama'=>'Susanti','jurusan'=>'Sistem Informasi '],
+                 3=> ['nama'=>'Stevan','jurusan'=>'Informatika']
+             ];
+
     public function index()
     {
-        //
+        return view('listMahasiswa')->with('mhs',$this->mhs);
     }
 
     /**
@@ -82,3 +88,4 @@ class mahasiswaController extends Controller
         //
     }
 }
+
