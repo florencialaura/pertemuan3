@@ -12,19 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$mhs =[
-    1=>['nama' => 'Budiono', 'jurusan'=>'Sistem Informasi'],
-    2=>['nama' => 'Susanti', 'jurusan'=>'Sistem Informasi'],
-    3=>['nama' => 'Stevan', 'jurusan'=>'Informatika']
-];
+
 
 Route::get('/', function () {
     return view('welcome', ['nama' => 'Budiono', 'jurusan'=>'Sistem Informasi']);
 });
 
-Route::get('/Mahasiswa', function () {
-    return view('welcome', ['nama' => 'Mahasiswa Budiono', 'jurusan'=>'Sistem Informasi']);
+Route::get('/', function () {
+    $mhs =[
+        1=>['nama' => 'Budiono', 'jurusan'=>'Sistem Informasi'],
+        2=>['nama' => 'Susanti', 'jurusan'=>'Sistem Informasi'],
+        3=>['nama' => 'Stevan', 'jurusan'=>'Informatika']
+    ];
+    return view('listMahasiswa')->with('mhs', $mhs);
 });
+
 
 
 
